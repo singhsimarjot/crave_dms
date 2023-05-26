@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:cards="sap.f.cards" xmlns:f2="sap.f" xmlns:core="sap.ui.core" xmlns="sap.m" 
+xmlns:c="sap.suite.ui.commons" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+ xmlns:u="sap.ui.unified">
+
+   <Dialog title="Upload File" id="DialogId3" class="bgHeader dialogbgText" titleAlignment="Center">
+            <content>
+              <VBox class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiTinyMarginBottom">
+                  <u:FileUploader
+                     id="fileUploader"
+                     name="myFileUpload"
+                     uploadUrl="upload/"
+                     tooltip="Upload your file to the local server"
+                     uploadComplete="handleUploadComplete"/>
+                  <Button
+                     text="Upload File"
+                     press="handleUploadPress" />
+               </VBox>
+            </content>
+               <buttons>
+                <Button text="close" press="onCloseDoc"  class=" " type="Emphasized"></Button>
+               </buttons>
+            
+   </Dialog> 
+</core:FragmentDefinition>   

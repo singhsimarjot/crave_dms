@@ -1,0 +1,73 @@
+<mvc:View controllerName="com.ns.dmsfioriapp.controller.detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page1" title="detail" showNavButton="true" navButtonPress="onBack">
+        <content>
+<Table id="DetailIdTable"  inset="true" width="100%" items="{path :'tableModel>/dataArray' , length:2000}" >
+			<headerToolbar>	
+	<OverflowToolbar>
+         
+        <ToolbarSpacer/>
+		<SearchField width="20%" liveChange="onSearch"/>  
+		<Button text="Create Folder" press="onCreateFolder"/>
+        
+		<!-- <ComboBox  value="Create" change="onSelect">  
+                                    <items>
+                                        <core:Item   text="Folder" />
+                                        <core:Item   text="Document"/>
+                                    </items>
+		</ComboBox>  -->
+		 
+	</OverflowToolbar>
+						</headerToolbar>
+						<columns>						   
+							<Column>
+								<Text text="Type"/>
+							</Column>
+							<Column>
+								<Text text="ID"/>
+							</Column>
+							<Column>
+								<Text text="Doc Name"/>
+							</Column>
+                            <Column>
+								<Text text="Created By"/>
+							</Column>
+                            <Column>
+								<Text text="Creation Date"/>
+							</Column>
+                            <Column>
+								<Text text="Modified By"/>
+							</Column>
+							<Column>
+								<Text text="Owner Name"/>
+							</Column>	
+							<Column>
+								<Text text="Delete"/>
+							</Column>
+							<!-- <Column>
+								<Text text="Upload"/>
+							</Column>						 -->
+						</columns>
+						<items> 
+							<ColumnListItem press="onClick1" type="Active">            
+								<cells>									
+									<core:Icon src="sap-icon://folder" class="fileClass"/>
+									<Text text="{tableModel>objectTypeId}"/>
+									<!-- <Text text="{tableModel>/dataArray/0/namcontentStreamIde}"/> -->
+									 <Link text="{tableModel>name}" press="onLinkPress" id="DocID"/>
+                                    <Text text="{tableModel>createdBy}" />
+                                    <!-- <Text text="{tableModel>creationDate}" /> -->
+									<Text text="{path:'tableModel>creationDate', formatter:'.formatter.setDate'} "></Text>
+                                    <Text text="{tableModel>lastModifiedBy}" />
+                                    <Text text="{tableModel>owner}" />
+									<core:Icon src="sap-icon://delete" class="sapUiSmallMarginBegin" press="onDelete"/>
+									<!-- <Button text="Uplaod file" press="onUplaodfile" type="Emphasized"/> -->
+                                    
+                                    </cells>
+							</ColumnListItem>
+						</items>
+					</Table> 
+        </content>
+        </Page>
+</mvc:View>

@@ -1,0 +1,84 @@
+<mvc:View controllerName="com.ns.dmsfioriapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+	 <App id="app">
+   
+    <Page id="page" title="Document Management UI" titleAlignment="Center">
+        <content>
+<Table id="idTable"  inset="true" width="100%" items="{dataModel>/Array}" mode="MultiSelect"
+              selectionChange="onSelectionChange">
+			<headerToolbar>	
+			<OverflowToolbar>
+         
+        <ToolbarSpacer/>
+		<SearchField width="20%" liveChange="onSearch"/>
+         <Button text="Create" press="onCreate"></Button>
+         <!-- <Button text="Edit Link"></Button>
+         <Button text="Download"></Button>
+         <Button text="Delete"></Button>
+        <Button text="Move"></Button>
+        <Button text="Copy"></Button> -->
+        <!-- <ComboBox placeholder="Manage Document" width="12%"></ComboBox> -->
+		</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<!-- <Column>
+								<VBox>
+										<CheckBox   id="sellectAll" select="selectAll"/>
+									</VBox>
+							</Column> -->
+							<Column>
+								<Text text="Type"/>
+							</Column>
+							<Column>
+								<Text text="Name"/>
+							</Column>
+							<Column>
+								<Text text="Repository Category"/>
+							</Column>
+                            <Column>
+								<Text text="Repository Description"/>
+							</Column>
+                            <Column>
+								<Text text="Repository Id"/>
+							</Column>
+                            <Column>
+								<Text text="Vendor Name"/>
+							</Column>
+							<Column>
+								<Text text="Edit"/>
+							</Column>
+							<!-- <Column>
+								<Text text="Delete"/>
+							</Column> -->
+							             
+						</columns> 
+						<items>
+							<ColumnListItem press="onClick" type="Navigation">
+              
+								<cells>
+									<!-- <VBox>
+										<CheckBox />
+									</VBox> -->
+									<core:Icon src="sap-icon://folder-full" class="folderClass"/>
+									<Text text="{dataModel>repositoryName}"/>
+									 <Text text="{dataModel>repositoryCategory}" />
+                                    <Text text="{dataModel>repositoryDescription}" />
+                                    <Text text="{dataModel>repositoryId}" id="reid" />
+                                    <Text text="{dataModel>vendorName}" />
+                                    <!-- <HBox >
+									<core:Icon src="sap-icon://information"/> -->
+                                    <core:Icon src="sap-icon://edit" class="sapUiSmallMarginBegin"/>
+								    <!-- <core:Icon src="sap-icon://delete" class="sapUiSmallMarginBegin" press="onDelete"/> -->
+                                    <!-- <core:Icon src="sap-icon://display" class="sapUiSmallMarginBegin"/>
+                                    </HBox>   -->
+                                    </cells>
+							</ColumnListItem>
+
+						</items>
+					</Table> 
+
+        </content>
+    </Page>
+	 </App>
+</mvc:View>

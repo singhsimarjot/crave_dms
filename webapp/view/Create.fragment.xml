@@ -1,0 +1,18 @@
+
+<core:FragmentDefinition xmlns:cards="sap.f.cards" xmlns:f2="sap.f" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:c="sap.suite.ui.commons" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+   <Dialog title="Create Repository" class="bgHeader dialogbgText" titleAlignment="Center">
+
+	<content>
+   <VBox>
+	<Label text="Enter Repository Name" class="sapUiTinyMarginTop sapUiSmallMarginBegin"></Label>
+   <Input width="80%" id="Inp1" class="sapUiTinyMarginBottom sapUiSmallMarginBegin"></Input>
+   </VBox>
+    
+  </content> 
+            <buttons>      
+			 <Button text="Save" press="SaveBtn" class=" " type="Emphasized"></Button>  
+            <Button text="Close" press="onClose" class="" type="Emphasized"></Button>
+                    
+            </buttons>
+   </Dialog> 
+</core:FragmentDefinition>   
